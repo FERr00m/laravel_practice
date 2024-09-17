@@ -29,17 +29,17 @@ class DevCommand extends Command
     public function handle()
     {
         //
-        //$this->prepareData();
+        $this->prepareData();
 //        $profile = Profile::first();
 //
 //        $worker = Worker::find($profile->worker_id);
 //
 //        dd($worker->toArray());
 
-        $worker = Worker::find(1);
-        $position = Position::find(1);
-
-        dd($position->workers->toArray());
+//        $worker = Worker::find(1);
+//        $position = Position::find(1);
+//
+//        dd($position->workers->toArray());
 
     }
 

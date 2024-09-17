@@ -10,6 +10,10 @@ use Illuminate\Http\Request;
 
 class WorkerController extends Controller
 {
+    public function api()
+    {
+        return response()->json(Worker::all());
+    }
     public function index(IndexRequest $request)
     {
         $data = $request->validated();

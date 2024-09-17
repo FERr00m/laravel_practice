@@ -16,4 +16,27 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function test_post_create_worker(): void
+    {
+        $this->post('/workers' ,[
+            'name' => 'TEST',
+            'surname' => 'TESTov',
+            'email' => 'fsfd@fsd.ru',
+            'age' => 36,
+            'description' => 'Some',
+            'is_married' => true,
+            'position_id' => 1,
+        ]);
+
+        $this->assertDatabaseHas('workers', [
+            'name' => 'TEST',
+            'surname' => 'TESTov',
+            'email' => 'fsfd@fsd.ru',
+            'age' => 36,
+            'description' => 'Some',
+            'is_married' => true,
+            'position_id' => 1,
+        ]);
+    }
 }

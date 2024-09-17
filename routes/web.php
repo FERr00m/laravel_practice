@@ -6,8 +6,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::apiResource('/api/wor', '\App\Http\Controllers\MySampleResourceApiController');
+
+Route::redirect('ssd', '/');
+
 Route::prefix('workers')->group(function () {
     Route::get('/', [\App\Http\Controllers\WorkerController::class, 'index'])->name('worker.index');
+    Route::get('/api', [\App\Http\Controllers\WorkerController::class, 'api']);
     Route::get('/create', [\App\Http\Controllers\WorkerController::class, 'create'])->name('worker.create');
     Route::get('/{worker}', [\App\Http\Controllers\WorkerController::class, 'show'])->name('worker.show');
 
