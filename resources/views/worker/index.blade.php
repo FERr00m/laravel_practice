@@ -1,5 +1,7 @@
 @extends('layout.main')
 
+@section('title', 'Index')
+
 @section('content')
 Index Page
 
@@ -46,5 +48,14 @@ Search
 <div class="my-nav">
     {{ $workers->withQueryString()->links() }}
 </div>
+@include('components.button', ['text'=>'Hello'])
+@include('components.button', ['text'=>'DDD'])
+    @includeWhen(random_int(1, 10) % 2 == 1, 'components.button', ['text'=>'Random'])
+@endsection
 
+
+
+@section('footerScripts')
+    @parent
+    <script>console.log('index')</script>
 @endsection

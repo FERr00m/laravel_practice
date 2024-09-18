@@ -1,5 +1,7 @@
 @extends('layout.main')
 
+@section('title', 'Show')
+
 @section('content')
 Show Page
 <div>

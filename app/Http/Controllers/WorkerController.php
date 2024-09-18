@@ -50,6 +50,7 @@ class WorkerController extends Controller
 
         $workers = $workerQuery->paginate(2);
 
+        //dd(compact('workers'));
         return view('worker.index', compact('workers'));
     }
 
